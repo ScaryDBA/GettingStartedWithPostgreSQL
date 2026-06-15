@@ -1,12 +1,12 @@
 # Contributing
 
-This is primarily a solo project. Contributions are not expected, but if you find an error, a gap, or something that could be clearer, a PR is welcome.
+Look, I don't know that anyone will ever want to contribute to this project. However, if you do, you're welcome. We'll work from Pull Requests.
 
 ## Rules
 
-- Fix one thing per PR. No refactors, no reformats, no unsolicited improvements.
-- Match the existing style and structure.
-- If it's a technical correction, be right.
-- No new lessons or major additions without opening an issue first.
+- Fix one thing per PR. Especially early in this project, let's keep unsolicited improvements to a minimum. Again, to start.
+- Please match the existing style and structure.
+- Use your AI sparingly. Please.
+- Always refer back to the goal of the class. I want to keep these to no more than two hours each as much as possible.
 
-That's it.
+Good enough?
