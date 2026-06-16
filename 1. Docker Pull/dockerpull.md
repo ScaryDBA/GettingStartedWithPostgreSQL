@@ -12,4 +12,4 @@ For all these reasons, we'll use `pull` as the foundation for building out Postg
 
 ## Docker Pull
 
-
+There are a number of possible docker images. We'll start with the most generic PostgreSQL image. Later in the class we'll use a specialized image as well.
