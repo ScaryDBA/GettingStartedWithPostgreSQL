@@ -6,11 +6,13 @@ The goal for Class #1 is simple, get PostgreSQL up and running in the fastest, e
 
 ## Requirements
 
+You must have your own hardware. None will be provided at the in-person events.
+
 You must be running an operating system capable of running Docker containers. Red Hat and Fedora have Podman built in, so nothing you need to do there. Debian, Ubuntu or Raspbian will require an engine be installed such as Podman or the Docker Engine. For Windows, you will need to make virtualization possible on your latp by first installing wsl. After that, you can install Podman Desktop, Rancher Desktop or Docker Desktop. For a Mac, you have a set of choices, Podman or Podman Desktop, Colima, Docker Desktop for Mac, Rancher Desktop.
 
 You will have to be able to run a docker container to take part in this lesson. This lesson will not include how to set that up. We're going to assume you already have that in place.
 
-During the initial "pull" part of the lessons, we'll also require internet connectivity so that we can retrieve the Docker images.
+During the initial "pull" part of the lessons, we'll also require internet connectivity so that we can retrieve the PostgreSQL images from the Docker Hub.
 
 You can validate that you can run Docker commands by running the following:
 `docker info`
@@ -38,5 +40,7 @@ Each lesson within the class will be placed within a folder, ordered and labeled
 8. Creating Tables
 9. Adding Data to Tables
 10. Querying PostgreSQL
+11. Removing Containers
+12. Setting up BlueBox
 
-Within each folder will be a markdown file for the lesson itself as well as seperate files for the CLI commands for that lesson, and any SQL commands for that lesson. Later classes and lessons will have additional files within the lesson folders.
+Within each folder will be a markdown file (*.md) for the lesson itself as well as seperate files for the CLI commands (*.sh) for that lesson, and any SQL commands (*.sql) for that lesson. Later classes and lessons may have additional files within the lesson folders.
