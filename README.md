@@ -43,4 +43,4 @@ Each lesson within the class will be placed within a folder, ordered and labeled
 11. Removing Containers
 12. Setting up BlueBox
 
-Within each folder will be a markdown file (*.md) for the lesson itself as well as seperate files for the CLI commands (*.sh) for that lesson, and any SQL commands (*.sql) for that lesson. Later classes and lessons may have additional files within the lesson folders.
+Within each folder will be a markdown file (`*.md`) for the lesson itself as well as seperate files for the CLI commands (`*.sh`) for that lesson, and any SQL commands (`*.sql`) for that lesson. Later classes and lessons may have additional files within the lesson folders.
