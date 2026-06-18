@@ -8,7 +8,6 @@ mkdir -p /home/grant/bu
 ## Windows/Powershell
 mkdir C:/bu
 
-
 ## Creating a container
 ## Linux/MacOS
 docker run -d --name StartingPostgreSQL \
@@ -25,6 +24,17 @@ docker run -d --name StartingPostgreSQL `
     -v C:/bu:/var/lib/postgresql/bu `
     -e POSTGRES_USER=postgres `
     postgres:latest
+
+## Checking thes status of the container
+docker ps -f 'name=StartingPostgreSQL'
+
+## stopping a container
+docker stop StartingPostgreSQL
+
+## starting a container
+docker start StartingPostgreSQL
+
+
 
 
 ## In case of problems, this will stop and remove the container

@@ -21,3 +21,27 @@ For a container, a simple role is all that's needed to connect to the cluster ru
 
 Finally, I supply the name of the Docker image, `postgres:latest.`
 
+When you execute this command, you receive back an identifier for the container you created. You can use that identifier, or, you can use the name of the container you created. It's easier, and more clear, to use the name. You can validate that the container was successfully created above by running this command:
+
+`docker ps -f 'name=StartingPostgreSQL'`
+
+This should result in something similar to the following:
+
+```text
+CONTAINER ID   IMAGE             COMMAND                  CREATED         STATUS         PORTS                                         NAMES
+6ae8a06273fe   postgres:latest   "docker-entrypoint.s…"   6 seconds ago   Up 5 seconds   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   StartingPostgreSQL
+```
+
+As you can see from the output, you get the ID for the container itself, as well as the name, the image used in creation, when it was created and the current status along with any ports.
+
+That's it. You now have a functional PostgreSQL cluster running within a container.
+
+You can stop the container if you choose by issuing the following command:
+
+`docker stop StartingPostgreSQL`
+
+If you then subsequently wish to restart the container you can do the following:
+
+`docker start StartingPostgreSQL`
+
+Please leave the container in a running state to start the next lesson, 
