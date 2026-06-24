@@ -60,4 +60,4 @@ If you then subsequently wish to restart the container you can do the following:
 
 `docker start StartingPostgreSQL`
 
-Please leave the container in a running state to start the next lesson, Connecting to PostgreSQL.
+Please leave the container in a running state to start the next lesson, Docker Exec.
