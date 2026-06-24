@@ -4,7 +4,7 @@ Once an image has been created locally, you can now use that image to create con
 
 `docker run -d --name StartingPostgreSQL \
     -p 5432:5432 \
-    -e POSTGRES_PASSWORD=$omePassw0rd \
+    -e POSTGRES_PASSWORD=Some*Passw0rd \
     -v /home/grant/bu:/var/lib/postgresql/bu \
     -e POSTGRES_USER=postgres \
     postgres:latest`
