@@ -64,10 +64,10 @@ We get the following results:
 
 ## Using radiodev
 
-For the rest of the class, we'll be using a database called 'hamshack.' Since we're going to let the database owner also own the other objects we create within `hamshack` we need to go ahead and create the database. Other than the owner, there aren't any other database options we need to worry about, so we can just let the defaults handle things for us:
+For the rest of the class, we'll be using a database called 'ham_shack.' Since we're going to let the database owner also own the other objects we create within `ham_shack` we need to go ahead and create the database. Other than the owner, there aren't any other database options we need to worry about, so we can just let the defaults handle things for us:
 
 ```bash
-psql -d postgres -h localhost -U radiodev -c"CREATE DATABASE ham_shack;"
+psql -d postgres -h localhost -U radiodev -c "CREATE DATABASE ham_shack;"
 ```
 
 With the database created, let's connect to it through interactive psql instead of issuing commands all the time:
