@@ -18,3 +18,22 @@ ls /var/lib/postgresql/bu
 
 psql -d postgres -h localhost -U postgres -f "/var/lib/postgresql/bu/creatingrole.sql"
 
+
+## Validating that the role was created successfully
+
+## leave bash
+exit
+
+## copy the file
+cp "5. Creating a Role/creatingrolevalidation.sql" /mnt/c/Users/grant/bu
+
+## go back into bash
+docker exec -it StartingPostgreSQL "bash"
+
+## run the query
+psql -d postgres -h localhost -U postgres -f "/var/lib/postgresql/bu/creatingrolevalidation.sql"
+
+
+## Testing the role
+
+psql -d postgres -h localhost -U radiodev -c "\conninfo"
