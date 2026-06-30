@@ -8,6 +8,8 @@ The goal for Class #1 is simple, get PostgreSQL up and running in the fastest, e
 
 You must have your own hardware. None will be provided at the in-person events.
 
+Please download a copy of this repository to your machine. Lessons assume you have the code locally.
+
 You must be running an operating system capable of running Docker containers. Red Hat and Fedora have Podman built in, so nothing you need to do there. Debian, Ubuntu or Raspbian will require an engine be installed such as Podman or the Docker Engine. For Windows, you will need to make virtualization possible on your latp by first installing wsl. After that, you can install Podman Desktop, Rancher Desktop or Docker Desktop. For a Mac, you have a set of choices, Podman or Podman Desktop, Colima, Docker Desktop for Mac, Rancher Desktop.
 
 You will have to be able to run a docker container to take part in this lesson. This lesson will not include how to set that up. We're going to assume you already have that in place.
@@ -25,6 +27,8 @@ If that runs successfully, you can validate internet connectivity by running the
 That should pull an image and then create a container that shows "Hello from Docker!" along with some other text, suggestions and alternate commands.
 
 There are no other requirements at this time, in terms of software or hardware. The majority of commands in this lesson will be run from the command line on whatever operating system and hardware you choose to use.
+
+I do recommend using VSCode for the lessons. It has a very tight integration with source control, making it easier to get the project locally. It can also very easily show you the markdown files all lesson plans are in using the supplied formatting (CTL+SHIFT+V/CMD+SHIFT+V to enable or disable markdown formatting). However, that's only a suggestion.
 
 ## Class Plan
 
