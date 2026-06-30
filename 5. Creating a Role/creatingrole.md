@@ -2,6 +2,8 @@
 
 One of the more important aspects of PostgreSQL that is important to understand is that of ownership. The owners of objects, not only such as a schema inside a database, but the database itself, is very fundamental to both Postgres security and behaviors. With that in mind, instead of first creating a database to work on within PostgreSQL, we'll start by creating a role. With the role created, we can then log in to that role and validate that it works. With it working, we'll be ready to move on to the next lesson and create a database.
 
+Older versions of PostgreSQL don't have roles, but instead have users. The `CREATE USER` command is still a part of Postgres, but it simply acts now as an alias to create a role.
+
 ## Running a script with psql
 
 Instead of typing in psql or copying and pasting into it, this time, we'll let psql run a script for us. Externally, in your operating system, we're going to copy the file `creatingrole.sql` into the volume we created with the container. In Linux, you can use the Files gui, or issue a command similar to the following:
@@ -43,7 +45,18 @@ Now that we know the script is availble, we can execute a script through psql li
 psql -d postgres -h localhost -U postgres -f "/var/lib/postgresql/bu/creatingrole.sql"
 ```
 
-That should run successfully to create a role called `radiodev` with a hard-coded password, `*password*`. While we're still in bash, you could run a simple query to see if the role actually exists and if it has the permission to create a database.
+That should run successfully to create a role called `radiodev` with a hard-coded password, `*securepassword*`. While we're still in bash, you could run a simple query to see if the role actually exists and if it has the permission to create a database.
+
+The command we issued through the script is here:
+
+```sql
+CREATE ROLE radiodev WITH
+    LOGIN
+    CREATEDB
+    PASSWORD '*securepassword*';
+```
+
+Breaking this down just a little, let's talk about what happens. The first part should be straight forward, `CREATE ROLE radiodev` means we're creating a role with the name 'radiodev'. The `WITH` command allows us to add some additional behaviors to the role. First up, we're creating this role as one that can connect to the cluster through the `LOGIN` process. Then, we're giving it an explicit permission, the ability to `CREATEDB`, or create databases. Finally, we're supplying a password for the role. In this short class, we won't need the password because we'll be doing the work through psql running as a local connection, therefore, a trusted one. There are of course additional options available for CREATE ROLE. Look those up in the PostgreSQL documentation.
 
 ## Validating the creation of the role
 
@@ -102,4 +115,4 @@ A couple of points here. In our initial use of psql, we typed in commands direct
  Hot Standby          | off
 ```
 
-The most important thing I'll point out here is the fact that 'Superuser' is set to a value of 'off'. In short, this is a different role on the cluster. Let's move on to creating our first databases in PostgreSQL in Lesson 6.
+The most important thing I'll point out here is the fact that 'Superuser' is set to a value of 'off'. In short, this is a different role on the cluster, not the principal administrator, postgres. Let's move on to creating our first databases in PostgreSQL in Lesson 6.
