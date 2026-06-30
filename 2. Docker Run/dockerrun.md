@@ -5,7 +5,7 @@ Once an image has been created locally, you can now use that image to create con
 `docker run -d --name StartingPostgreSQL \
     -p 5432:5432 \
     -e POSTGRES_PASSWORD=Some*Passw0rd \
-    -v /home/grant/bu:/var/lib/postgresql/bu \
+    -v /mnt/c/Users/grant/bu:/var/lib/postgresql/bu \
     -e POSTGRES_USER=postgres \
     postgres:latest`
 
@@ -13,7 +13,7 @@ Once an image has been created locally, you can now use that image to create con
 
 Before we run the script though, let's talk about a few important pieces of information here. First, I'm going to recommend you create at least one volume on your container, the `-v` flag. A volume is way to map an external directory on your machine to a location within the container. Then, you can place files into that folder and they'll be readable within the container and outside in your operating system. If you wanted to have `*.sql` files or PostgreSQL dump files available within the container, this is the easy way to do it.
 
-Because of this, you will need to ensure that you have that folder already created on your local machine. The example script above is for a Linux machine. You'd need a different path for Windows (unless you're running everything through WSL on Windows).
+Because of this, you will need to ensure that you have that folder already created on your local machine. The example script above is for a Rancher Desktop path. You'd need a different path for Windows or Linux (unless you're running everything through WSL on Windows).
 
 You can get very sophisticated with volumes if you choose, but for our purposes, simply the ability to easily move scripts in to the container is enough.
 

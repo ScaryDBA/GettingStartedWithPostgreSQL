@@ -3,7 +3,7 @@
 ## First, create a directory on your machine to host the PostgreSQL volume
 ## substitute the path with your own, but make sure to use an absolute path
 ## Linux/MacOS
-mkdir -p /home/grant/bu
+mkdir -p /mnt/c/Users/grant/bu
 
 ## Windows/Powershell
 mkdir C:/bu
@@ -13,7 +13,7 @@ mkdir C:/bu
 docker run -d --name StartingPostgreSQL \
     -p 5432:5432 \
     -e POSTGRES_PASSWORD=Some*Passw0rd \
-    -v /home/grant/bu:/var/lib/postgresql/bu \
+    -v /mnt/c/Users/grant/bu:/var/lib/postgresql/bu \
     -e POSTGRES_USER=postgres \
     postgres:latest
     

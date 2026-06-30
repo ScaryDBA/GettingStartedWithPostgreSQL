@@ -6,15 +6,17 @@ Before we continue on to actually executing psql, if you exited the bash shell i
 
 ## psql
 
-Within PostgreSQL, psql is considered to be the official interface for PostgreSQL. It's a command line for interacting with and administering PostgreSQL clusters. You can issue SQL commands and you can take advantage of utilities built in to psql. In this lesson, we're going to explore the basic connection to Postgres using psql. Then, in following lessons we'll use psql to create objects within the cluster to act as the basis for our class.
+psql is considered to be the official interface for PostgreSQL. It's a command line for interacting with and administering PostgreSQL clusters. You can issue SQL commands and you can take advantage of utilities built in to psql. In this lesson, we're going to explore the basic connection to Postgres using psql. Then, in following lessons we'll use psql to create objects within the cluster to act as the basis for our class.
 
 I'm assuming you're following the lesson plan, so you'll be running this within a bash shell inside your container. However, you wouldn't run it any differently from the command line of your host OS. For our container as configured, here's how we would connect to it through psql:
 
 `psql -d postgres -h localhost -U postgres`
 
-When you run this you'll be prompted for a password. Supply the one used when creating the container (in the example, Some*Passw0rd). You're forced to provide a password in order to keep the password out of the history of commands in your CLI as a security measure. If you are running psql from an external command line, not within the bash shell as we're doing, there are a couple of ways to supply a password without typing it each time. One way is to create an environment variable on your machine, but that's less secure than simply entering the password. Another way is to create a secured file (chmod 0600) in your file system. We'll just stick to the password for our examples.
+When you run this inside a container, you won't be prompted for a password because you're in a trusted environment. Otherwise, when running psql, you'll need to supply the password used when creating the container (in the example, Some*Passw0rd). You're forced to provide a password in order to keep the password out of the history of commands in your CLI as a beneficial security measure. If you are running psql from an external command line, not within the bash shell as we're doing, there are a couple of ways to supply a password without typing it each time. One way is to create an environment variable on your machine, but that's less secure than simply entering the password. Another way is to create a secured file (chmod 0600) in your file system. We'll just stick to the password for our examples.
 
-After the password is supplied, your prompt should change to something like this:
+We're logging in to the default database, `postgres`, and using the user we created back in Lesson 2, `postgres`.
+
+Your prompt should change to something like this:
 
 `psql (18.4 (Debian 18.4-1.pgdg13+1))
 Type "help" for help.
@@ -71,4 +73,4 @@ We can also get a list of databases:
 
 This is unlikely to page on our example container because there should only be three databases; postgres (the one we're connected to), template0 and template1. We'll discuss the templates more in lesson 6.
 
-With the basics of psql under our belts, let's start working within PostgreSQL in Lessong 5, Creating a Role.
+With the basics of psql under our belts, let's start working within PostgreSQL in Lesson 5, Creating a Role.
