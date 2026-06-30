@@ -32,5 +32,5 @@ ALTER ROLE radiodev SET search_path TO "$user", gear, public;
 
 CREATE SCHEMA people;
 ALTER ROLE radiodev SET search_path TO "$user", gear, people, public;
-exit
+\q
 

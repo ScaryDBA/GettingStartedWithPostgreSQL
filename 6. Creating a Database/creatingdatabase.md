@@ -134,7 +134,7 @@ You can simply copy and paste this command into psql. Since nothing is executed 
 As you can see, we're in a new database, owned by the role we just created. Let's exit psql for the moment:
 
 ```sql
-exit
+\q
 ```
 
 We'll still be connected to the container through bash. With our role and database in place, it's time to start to work within the database. We'll start on Lesson 7. Creating a Schema.

@@ -89,4 +89,6 @@ We can also get a list of databases:
 
 This is unlikely to page on our example container because there should only be three databases; postgres (the one we're connected to), template0 and template1. We'll discuss the templates more in lesson 6.
 
+To leave a psql session such as this, use the meta command `\q`.
+
 With the basics of psql under our belts, let's start working within PostgreSQL in Lesson 5, Creating a Role.

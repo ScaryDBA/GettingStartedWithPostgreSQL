@@ -90,15 +90,15 @@ In order to change the `search_path` permanently, you have to either `ALTER` the
 ALTER ROLE radiodev SET search_path TO "$user", gear, public;
 ```
 
-However, that will only take affect on new connections for this role. You would either have to use the `SET` command along with the `ALTER ROLE`, or, disconnect and reconnect to the database. Before we test the new and improved 'search_path', let's add one more schema:
+However, that will only take affect on new connections for this role. You would either have to use the `SET` command along with the `ALTER ROLE`, or, disconnect and reconnect to the database. However, before we test the new and improved 'search_path', let's add one more schema:
 
 ```sql
 CREATE SCHEMA people;
 ALTER ROLE radiodev SET search_path TO "$user", gear, people, public;
-exit
+\q
 ```
 
-If you now connect again to psql and run the SHOW command, you'll see the following:
+If you now connect again, using the docker command to bash from the beginning of the less to connect psql and run the SHOW command, you'll see the following:
 
 ```text
           search_path          

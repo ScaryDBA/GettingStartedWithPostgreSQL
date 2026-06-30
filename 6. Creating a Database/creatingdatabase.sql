@@ -47,3 +47,6 @@ FROM
 	pg_catalog.pg_database AS pd
 WHERE
 	datname = current_database();
+
+--Disconnect from psql
+\q

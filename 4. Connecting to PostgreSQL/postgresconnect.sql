@@ -8,3 +8,6 @@ SELECT version();
 
 -- Getting a list of databases
 \l
+
+--Disconnecting from psql
+\q
