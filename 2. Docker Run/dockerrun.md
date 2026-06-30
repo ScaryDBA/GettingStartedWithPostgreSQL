@@ -2,12 +2,14 @@
 
 Once an image has been created locally, you can now use that image to create containers. As was stated in the last lesson, you can simply use `docker run` to both pull the image and create the container. Either way, we'll need to break down the core requirements for creating a PostgreSQL container using `docker run`. This is the full command that we'll be using:
 
-`docker run -d --name StartingPostgreSQL \
+```bash
+docker run -d --name StartingPostgreSQL \
     -p 5432:5432 \
     -e POSTGRES_PASSWORD=Some*Passw0rd \
     -v /mnt/c/Users/grant/bu:/var/lib/postgresql/bu \
     -e POSTGRES_USER=postgres \
-    postgres:latest`
+    postgres:latest
+```
 
 ## Volume
 
@@ -37,7 +39,9 @@ Finally, I supply the name of the Docker image, `postgres:latest.`
 
 When you execute this command, you receive back an identifier for the container you created. You can use that identifier, or, you can use the name of the container you created. It's easier, and more clear, to use the name. You can validate that the container was successfully created above by running this command:
 
-`docker ps -f 'name=StartingPostgreSQL'`
+```bash
+docker ps -f 'name=StartingPostgreSQL'
+```
 
 This should result in something similar to the following:
 
@@ -54,10 +58,14 @@ That's it. You now have a functional PostgreSQL cluster running within a contain
 
 You can stop the container if you choose by issuing the following command:
 
-`docker stop StartingPostgreSQL`
+```bash
+docker stop StartingPostgreSQL
+```
 
 If you then subsequently wish to restart the container you can do the following:
 
-`docker start StartingPostgreSQL`
+```bash
+docker start StartingPostgreSQL
+```
 
-Please leave the container in a running state to start the next lesson, Docker Exec.
+Please leave the container in a running state to start the next lesson, Docker Exec. In fact, going forward, I'm going to assume the container is running for all lessons.

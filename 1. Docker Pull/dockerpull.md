@@ -14,7 +14,9 @@ For all these reasons, we'll use `pull` as the foundation for building out Postg
 
 There are a number of possible docker images. We'll start with the most generic PostgreSQL image. Later in the class we'll use a specialized image as well. Be sure you have an internet connection and your docker service is running, then run the following command:
 
-`docker pull postgres:latest`
+```bash
+docker pull postgres:latest
+```
 
 The part of the command `:latest` isn't actually necessary. By default, a `pull` command, if given no other instruction, will get the latest, stable, image. Worth repeating here, depending on the service you're running, you substitute `podman` or `nerdctl` for the `docker` command. All other aspects of the command will stay the same. Just to reiterate, the `latest` image will not be the most cutting edge version under development, but rather, the newest, stable release.
 
@@ -22,7 +24,9 @@ This command could take a while depending on the speed and bandwidth of your int
 
 To validate that the docker image was downloaded successfully, you can run the following:
 
-`docker images`
+```bash
+docker images
+```
 
 On a brand new machine, you'll probably only see a REPOSITORY with one or two images, postgres and possibly hello-world. Also pay attention to the TAG column. Your postgres image should show a tag of 'latest'. If that's the case, you're ready to create a container.
 
@@ -32,4 +36,6 @@ If you wanted to have a specific version of PostgreSQL, it's possible by supplyi
 
 To pull a particular version, you merely need to supply it. As an optional example, here's how you would pull version 17.10:
 
-`docker pull postgres:17.10`
+```bash
+docker pull postgres:17.10
+```
